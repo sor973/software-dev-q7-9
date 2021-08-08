@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main () 
+{
+    int n ;
+    time_t t;
+    FILE *fp;
+    srand(time(&t));
+    fp = fopen ("data.txt", "w");
+
+    printf("Enter Number: ");
+    scanf("%d",&n);
+
+    for(int i = 0; i<n; i++)
+    {
+        fprintf(fp, " %d \n", rand() %1000 );
+    }
+    fclose(fp);
+    return(0);
+}
